@@ -30,16 +30,22 @@ const services = [
 ]
 
 const Treatments = () => {
+  const phone = '675993093'
+  const whatsappUrl = `https://wa.me/34${phone}?text=${encodeURIComponent(
+    'Hola, me gustaría recibir más información sobre los tratamientos en Clínica Dali Dent Parla.'
+  )}`
+
   return (
-    <section id="servicios" className="scroll-mt-28 bg-[#f6fbf7] py-24">
+    <section id="servicios" className="scroll-mt-28 bg-[#f4f8ff] py-24">
       <div className="mx-auto max-w-7xl px-4">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl font-extrabold text-green-700 sm:text-4xl">
+          <h2 className="text-3xl font-extrabold text-blue-700 sm:text-4xl">
             Nuestros servicios dentales
           </h2>
 
           <p className="mt-4 text-lg text-neutral-600 sm:text-xl">
-            En Clínica Odontológica Dra. Anna Tavarone ofrecemos tratamientos dentales personalizados para cuidar tu salud bucodental.
+            En Clínica Dali Dent Parla ofrecemos tratamientos personalizados
+            para cuidar tu salud bucodental con la máxima profesionalidad.
           </p>
         </div>
 
@@ -47,7 +53,7 @@ const Treatments = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className="flex overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_rgba(22,101,52,0.10)] transition hover:shadow-[0_15px_40px_rgba(22,101,52,0.16)]"
+              className="flex overflow-hidden rounded-2xl bg-white shadow-[0_10px_30px_rgba(37,99,235,0.10)] transition hover:shadow-[0_15px_40px_rgba(37,99,235,0.18)]"
             >
               <div className="w-[40%]">
                 <img
@@ -59,7 +65,7 @@ const Treatments = () => {
 
               <div className="flex w-[60%] flex-col justify-between p-6">
                 <div>
-                  <h3 className="text-xl font-extrabold text-green-700 sm:text-2xl">
+                  <h3 className="text-xl font-extrabold text-blue-700 sm:text-2xl">
                     {service.title}
                   </h3>
 
@@ -70,8 +76,10 @@ const Treatments = () => {
 
                 <div className="mt-6">
                   <a
-                    href="#contacto"
-                    className="inline-flex items-center gap-2 text-base font-semibold text-green-700 transition hover:text-green-900"
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-base font-semibold text-blue-700 transition hover:text-blue-900"
                   >
                     Más información →
                   </a>
