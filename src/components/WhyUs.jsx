@@ -2,16 +2,47 @@ import { useEffect, useState } from 'react'
 
 const slides = [
   {
-    image:
-      'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Dentista atendiendo a paciente en consulta',
-    badge: 'Odontología cercana, profesional y personalizada',
+    image: '/clinica-dali-dent-equipo.jpeg',
+    alt: 'Equipo de Clínica Dali Dent Parla',
+    badge: 'Atención cercana desde el primer momento',
   },
   {
-    image:
-      'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Dentista revisando sonrisa de paciente',
-    badge: 'Cuidamos tu sonrisa con atención de confianza',
+    image: '/clinica-dali-dent-gabinete.jpeg',
+    alt: 'Gabinete dental de Clínica Dali Dent Parla',
+    badge: 'Instalaciones preparadas para cuidar tu sonrisa',
+  },
+  {
+    image: '/clinica-dali-dent-paciente.jpeg',
+    alt: 'Paciente en Clínica Dali Dent Parla',
+    badge: 'Tratamientos personalizados para cada paciente',
+  },
+  {
+    image: '/clinica-dali-dent-paciente-2.jpeg',
+    alt: 'Paciente sonriendo tras su tratamiento',
+    badge: 'Resultados que mejoran tu confianza y bienestar',
+  },
+]
+
+const values = [
+  {
+    icon: '✨',
+    title: 'Atención personalizada',
+    text: 'Estudiamos tu caso con detalle para recomendarte el tratamiento más adecuado.',
+  },
+  {
+    icon: '🤝',
+    title: 'Trato cercano',
+    text: 'Queremos que te sientas cómodo, escuchado y seguro en cada visita.',
+  },
+  {
+    icon: '🦷',
+    title: 'Salud y estética dental',
+    text: 'Cuidamos la salud de tu boca y mejoramos la estética de tu sonrisa.',
+  },
+  {
+    icon: '👩‍⚕️',
+    title: 'Experiencia profesional',
+    text: 'Te acompañamos con explicaciones claras, honestas y soluciones eficaces.',
   },
 ]
 
@@ -27,71 +58,57 @@ const WhyUs = () => {
   }, [])
 
   return (
-    <section className="bg-[#f4f8ff] py-24">
-      <div className="mx-auto grid max-w-7xl items-center gap-16 px-4 lg:grid-cols-2">
-        
-        <div className="relative">
-          <span className="absolute -left-10 top-0 hidden rotate-180 text-xs font-bold uppercase tracking-[0.4em] text-blue-700 lg:block [writing-mode:vertical-rl]">
-            Dali Dent Parla
+    <section
+  id="porque-dali-dent"
+  className="relative scroll-mt-32 overflow-hidden bg-gradient-to-b from-white via-[#f4f8ff] to-white py-24"
+>
+      <div className="absolute -left-32 top-20 h-80 w-80 rounded-full bg-blue-100/70 blur-3xl"></div>
+      <div className="absolute -right-32 bottom-20 h-80 w-80 rounded-full bg-cyan-100/70 blur-3xl"></div>
+
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-4 lg:grid-cols-2">
+        <div>
+          <span className="inline-flex rounded-full bg-blue-50 px-5 py-2 text-sm font-extrabold uppercase tracking-[0.18em] text-blue-700">
+            Nuestra clínica
           </span>
 
-          <div className="max-w-xl">
-            <span className="inline-block rounded-full bg-blue-700 px-5 py-2 text-sm font-bold text-white">
-              Nuestro valor
-            </span>
+          <h2 className="mt-5 text-4xl font-extrabold leading-tight text-slate-900 sm:text-5xl">
+            Una clínica dental en Parla pensada para cuidar de ti
+          </h2>
 
-            <h2 className="mt-5 text-4xl font-extrabold leading-tight text-blue-700 sm:text-5xl">
-              ¿Por qué elegir nuestra clínica?
-            </h2>
+          <p className="mt-6 text-lg leading-9 text-slate-600">
+            En Clínica Dali Dent Parla combinamos atención cercana,
+            tratamientos personalizados y un entorno profesional para que cada
+            visita sea cómoda, clara y de confianza.
+          </p>
 
-            <p className="mt-6 text-lg leading-9 text-neutral-700">
-              En Clínica Dali Dent Parla cuidamos tu salud bucodental con una atención cercana,
-              tratamientos personalizados y un equipo profesional de confianza.
-            </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+            {values.map((item, index) => (
+              <div
+                key={index}
+                className="rounded-3xl border border-blue-100 bg-white p-6 shadow-[0_18px_50px_rgba(15,23,42,0.07)] transition hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(37,99,235,0.14)]"
+              >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-2xl">
+                  {item.icon}
+                </div>
 
-            <div className="mt-10 space-y-8">
-              <div>
-                <h3 className="text-2xl font-extrabold text-blue-700">
-                  Atención personalizada
+                <h3 className="text-xl font-extrabold text-slate-900">
+                  {item.title}
                 </h3>
-                <p className="mt-2 text-lg text-neutral-600">
-                  Estudiamos cada caso para ofrecerte el tratamiento más adecuado.
+
+                <p className="mt-3 text-base leading-7 text-slate-600">
+                  {item.text}
                 </p>
               </div>
-
-              <div>
-                <h3 className="text-2xl font-extrabold text-blue-700">
-                  Trato cercano
-                </h3>
-                <p className="mt-2 text-lg text-neutral-600">
-                  Queremos que te sientas cómodo, escuchado y seguro desde el primer momento.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-extrabold text-blue-700">
-                  Salud y estética dental
-                </h3>
-                <p className="mt-2 text-lg text-neutral-600">
-                  Mejoramos tanto la salud de tu boca como la estética de tu sonrisa.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-extrabold text-blue-700">
-                  Experiencia profesional
-                </h3>
-                <p className="mt-2 text-lg text-neutral-600">
-                  Te acompañamos en cada paso con explicaciones claras y soluciones eficaces.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
         <div className="relative">
-          <div className="relative overflow-hidden rounded-[32px] shadow-[0_20px_60px_rgba(37,99,235,0.18)]">
-            <div className="relative h-[540px] w-full">
+          <div className="absolute -right-6 -top-6 h-32 w-32 rounded-[2rem] bg-blue-700/10"></div>
+          <div className="absolute -bottom-6 -left-6 h-32 w-32 rounded-[2rem] bg-blue-700"></div>
+
+          <div className="relative overflow-hidden rounded-[2rem] border-8 border-white bg-white shadow-[0_28px_90px_rgba(15,23,42,0.18)]">
+            <div className="relative h-[520px] w-full">
               {slides.map((slide, index) => (
                 <img
                   key={index}
@@ -99,32 +116,38 @@ const WhyUs = () => {
                   alt={slide.alt}
                   className={`absolute inset-0 h-full w-full object-cover transition-all duration-1000 ${
                     currentSlide === index
-                      ? 'opacity-100 scale-100'
-                      : 'opacity-0 scale-105'
+                      ? 'scale-100 opacity-100'
+                      : 'scale-105 opacity-0'
                   }`}
                 />
               ))}
 
-              <div className="absolute inset-0 bg-blue-900/20"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/55 via-slate-950/10 to-transparent"></div>
 
-              <div className="absolute left-6 top-6 z-10 max-w-sm rounded-2xl bg-white/95 px-5 py-4 shadow-lg backdrop-blur-sm">
-                <p className="text-base font-bold leading-7 text-blue-700">
-                  {slides[currentSlide].badge}
-                </p>
+              <div className="absolute bottom-6 left-6 right-6">
+                <div className="rounded-3xl bg-white/95 p-5 shadow-xl backdrop-blur">
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-blue-700">
+                    Dali Dent Parla
+                  </p>
+
+                  <p className="mt-2 text-xl font-extrabold text-slate-900">
+                    {slides[currentSlide].badge}
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="absolute -bottom-6 -left-6 h-28 w-28 rounded-[28px] bg-blue-700"></div>
-
-          <div className="mt-6 flex items-center justify-center gap-3">
+          <div className="mt-7 flex items-center justify-center gap-3">
             {slides.map((_, index) => (
               <button
                 key={index}
                 type="button"
                 onClick={() => setCurrentSlide(index)}
-                className={`h-3 w-3 rounded-full transition ${
-                  currentSlide === index ? 'bg-blue-700' : 'bg-black/20'
+                className={`h-3 rounded-full transition-all ${
+                  currentSlide === index
+                    ? 'w-10 bg-blue-700'
+                    : 'w-3 bg-slate-300 hover:bg-blue-300'
                 }`}
                 aria-label={`Ir a imagen ${index + 1}`}
               />

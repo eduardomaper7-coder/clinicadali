@@ -12,7 +12,7 @@ const FeaturedBox = () => {
           {/* Imagen */}
           <div className="h-[260px] w-full lg:h-[520px] lg:w-[62%]">
             <img
-              src="/clinica-dental.jpg"
+              src="/clinica-dental.jpeg"
               alt="Clínica Dali Dent Parla"
               className="h-full w-full object-cover"
             />
